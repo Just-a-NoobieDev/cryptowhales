@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import GlobalStats from "../components/global-stats/GlobalStats";
 import NewsSection from "../components/news/NewsSection";
 
 const Main = styled.main`
@@ -9,6 +10,7 @@ const Main = styled.main`
 const Home = () => {
   return (
     <Main>
+      <GlobalStats />
       <NewsSection />
       <h1>Hello</h1>
     </Main>
