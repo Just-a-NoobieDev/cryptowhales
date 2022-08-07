@@ -16,3 +16,8 @@ export const ExtraSmallTitle = styled.h3`
     margin-bottom: 0;
   }
 `;
+
+export const SectionTitle = styled.h1`
+  font-size: 22px;
+  font-weight: bold;
+`;
