@@ -26,3 +26,18 @@ export const SectionTitle = styled.h1`
     font-size: 30px;
   }
 `;
+
+export const NewsTitle = styled.h2(
+  ({ size }) => `
+  font-size: 14px;
+  line-height: 120%;
+
+  @media (min-width: 768px) {
+    font-size: ${size === "big-card" ? "20px" : "14px"} 
+  }
+
+  @media (min-width: 980px) {
+    font-size: ${size === "big-card" ? "20px" : "12px"} 
+  }
+`
+);

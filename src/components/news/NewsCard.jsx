@@ -1,12 +1,15 @@
 import { NewsCardContainer, NewsInfo } from "./styles";
 import logo from "../../images/logo-crypto.png";
+import { NewsTitle } from "../Typorgraphy";
 
 const NewsCard = ({ size = "small", imgUrl }) => {
   return (
-    <NewsCardContainer size={size}>
+    <NewsCardContainer size={size} href="#">
       <img src={logo} alt="" />
       <NewsInfo size={size}>
-        <h2></h2>
+        <NewsTitle size={size}>
+          Test Title of the news in this area. Some more text
+        </NewsTitle>
         <p></p>
       </NewsInfo>
     </NewsCardContainer>
