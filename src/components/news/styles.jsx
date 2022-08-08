@@ -6,7 +6,6 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 `;
 
 export const Wrapper = styled.div`
@@ -24,6 +23,7 @@ export const NewsCardDiv = styled.div`
   gap: 10px;
   flex-direction: column;
   justify-content: center;
+  margin-top: 1rem;
 
   @media (min-width: 980px) {
     flex-direction: row;

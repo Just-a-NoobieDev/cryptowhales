@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import GlobalStats from "../components/global-stats/GlobalStats";
 import NewsSection from "../components/news/NewsSection";
+import CryptoSection from "../components/top10cryptos/CryptoSection";
 
 const Main = styled.main`
   margin-top: 68px;
@@ -13,7 +14,7 @@ const Home = () => {
     <Main>
       <GlobalStats />
       <NewsSection />
-      <h1>Hello</h1>
+      <CryptoSection />
     </Main>
   );
 };
