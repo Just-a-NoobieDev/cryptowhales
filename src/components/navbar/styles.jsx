@@ -62,11 +62,6 @@ export const MenuContainer = styled.div`
     margin-bottom: 1rem;
     width: 100%;
     text-align: center;
-
-    &:hover,
-    &:active {
-      color: #437abd;
-    }
   }
 
   &.disable {
@@ -85,13 +80,14 @@ export const MenuContainer = styled.div`
 
     & > a {
       margin-bottom: 0;
-      margin-left: 1rem;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    & > a {
       margin-left: 2rem;
+      font-size: 14px;
+
+      &:hover,
+      &:active {
+        color: #437abd;
+        border-bottom: 2px solid #437abd;
+      }
     }
   }
 `;
