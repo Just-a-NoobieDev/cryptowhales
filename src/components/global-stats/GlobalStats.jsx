@@ -1,4 +1,4 @@
-import { ExtraSmallTitle } from "../Typorgraphy";
+import { ExtraSmallTitle } from "../Typography";
 import { Container, Wrapper } from "./styles";
 
 const GlobalStats = () => {

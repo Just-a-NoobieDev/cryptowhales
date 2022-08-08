@@ -1,6 +1,6 @@
 import NewsCard from "./NewsCard";
 
-import { SectionTitle } from "../Typorgraphy";
+import { SectionTitle } from "../Typography";
 import { Container, NewsCardDiv, SmallCardDiv, Wrapper } from "./styles";
 
 const NewsSection = () => {

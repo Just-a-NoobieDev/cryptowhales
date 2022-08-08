@@ -38,6 +38,7 @@ export const SmallCardDiv = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   @media (min-width: 980px) {
@@ -48,9 +49,9 @@ export const SmallCardDiv = styled.div`
 
 export const NewsCardContainer = styled.a(
   ({ size }) => `
-  background-color: red;
+  background-color: ${size === "big-card" ? "#F3BC19" : "#437ABD"};
   width: 100%;
-  height: 250px;
+  height: ${size === "big-card" ? "300px" : "250px"};
   position: relative;
 
   & > img {
@@ -61,13 +62,11 @@ export const NewsCardContainer = styled.a(
   
 
   @media (min-width: 768px) {
-    background-color: red;
-    width: ${size === "big-card" ? "100%" : "300px"};
-    height: ${size === "big-card" ? "400px" : "150px"};
+    width: ${size === "big-card" ? "100%" : "350px"};
+    height: ${size === "big-card" ? "400px" : "240px"};
   }
 
   @media (min-width: 980px) {
-    background-color: red;
     width: ${size === "big-card" ? "750px" : "300px"};
     height: ${size === "big-card" ? "460px" : "150px"};
 
@@ -82,17 +81,72 @@ export const NewsCardContainer = styled.a(
 export const NewsInfo = styled.div(
   ({ size }) => `
   background-color: #fff;
-  width: 80%;
-  height: 100px;
+  width: 95%;
+  height: ${size === "big-card" ? "182px" : "130px"};
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 5px;
 
+  @media (min-width: 768px) {
+    width: ${size === "big-card" ? "80%" : "95%"};
+    height: ${size === "big-card" ? "175px" : "130px"};
+  }
+
   @media (min-width: 980px) {
     padding: 5px 10px;
-    width: ${size === "big-card" ? "550px" : "220px"};
-    height: ${size === "big-card" ? "150px" : "80px"};
+    width: ${size === "big-card" ? "85%" : "95%"};
+    height: ${size === "big-card" ? "170px" : "100px"};
   }
 `
 );
+
+export const MainProviderDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 0;
+  margin-bottom: 5px;
+`;
+
+export const ProviderDiv = styled.div(
+  ({ size }) => `
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  & > img {
+    width: 20px;
+  }
+
+
+
+  @media (min-width: 768px) {
+    & > img {
+      width: 25px;
+    }
+  }
+
+  @media (min-width: 980px) {
+    & > img {
+      width: ${size === "big-card" ? "30px" : "20px"};
+    }
+  }
+`
+);
+
+export const Redirect = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+
+  & > a {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 980px) {
+    position: absolute;
+    bottom: 0;
+    right: 4%;
+  }
+`;
