@@ -54,6 +54,7 @@ export const MenuContainer = styled.div`
   top: 64px;
   left: 0;
   flex-direction: column;
+  border-radius: 10px;
   border-bottom: 3px solid #437abd;
   box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.2);
 

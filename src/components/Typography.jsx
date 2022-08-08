@@ -7,6 +7,8 @@ export const ExtraSmallTitle = styled.h3`
   color: #161616;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
+  cursor: default;
+  transition: 0.3s ease;
 
   & > span {
     color: #f3bc19;
@@ -15,12 +17,19 @@ export const ExtraSmallTitle = styled.h3`
   @media (min-width: 768px) {
     margin-bottom: 0;
   }
+
+  @media (min-width: 980px) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 `;
 
 export const SectionTitle = styled.h1`
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  cursor: default;
 
   @media (min-width: 768px) {
     font-size: 30px;

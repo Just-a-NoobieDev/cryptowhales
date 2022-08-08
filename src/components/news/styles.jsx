@@ -53,6 +53,8 @@ export const NewsCardContainer = styled.a(
   width: 100%;
   height: ${size === "big-card" ? "300px" : "250px"};
   position: relative;
+  border-radius: 5px;
+
 
   & > img {
     width: 100%;
@@ -87,6 +89,7 @@ export const NewsInfo = styled.div(
   bottom: 0;
   left: 0;
   padding: 5px;
+  border-radius: 5px;
 
   @media (min-width: 768px) {
     width: ${size === "big-card" ? "80%" : "95%"};
