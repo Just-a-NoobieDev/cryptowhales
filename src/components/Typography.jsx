@@ -87,3 +87,19 @@ export const TimeParagraph = styled(Paragraph)(
   }
 `
 );
+
+export const CryptoTitle = styled.h2`
+  font-size: 26px;
+  font-weight: 400;
+  cursor: default;
+`;
+
+export const CryptoTitleGray = styled(CryptoTitle)`
+  color: #bababa;
+  cursor: default;
+`;
+
+export const CryptoParagraph = styled(Paragraph)`
+  font-size: 16px;
+  cursor: default;
+`;

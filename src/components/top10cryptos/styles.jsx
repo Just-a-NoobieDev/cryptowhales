@@ -37,6 +37,13 @@ export const CardContainer = styled.div`
   border-radius: 8px;
   position: relative;
   padding: 20px;
+  transition: 0.3s ease;
+
+  @media (min-width: 980px) {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
 `;
 
 export const Circle = styled.img`
@@ -56,4 +63,15 @@ export const CoinImg = styled.img`
   width: 30%;
 `;
 
-export const CryptoName = styled.div``;
+export const CryptoName = styled.div`
+  display: flex;
+  gap: 15px;
+  align-items: center;
+`;
+
+export const CryptoDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 1rem;
+`;

@@ -89,7 +89,7 @@ export const NewsInfo = styled.div(
   bottom: 0;
   left: 0;
   padding: 5px;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
 
   @media (min-width: 768px) {
     width: ${size === "big-card" ? "80%" : "95%"};
