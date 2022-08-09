@@ -55,12 +55,12 @@ export const Circle = styled.img`
 
 export const CoinImg = styled.img`
   position: absolute;
-  bottom: 6%;
-  right: 1%;
+  bottom: 9%;
+  right: 6%;
   border-radius: 8px;
   z-index: 1;
 
-  width: 30%;
+  width: 20%;
 `;
 
 export const CryptoName = styled.div`
@@ -73,5 +73,5 @@ export const CryptoDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 `;

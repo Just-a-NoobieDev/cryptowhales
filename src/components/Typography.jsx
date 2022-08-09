@@ -92,6 +92,8 @@ export const CryptoTitle = styled.h2`
   font-size: 26px;
   font-weight: 400;
   cursor: default;
+  line-height: 100%;
+  max-width: 120px;
 `;
 
 export const CryptoTitleGray = styled(CryptoTitle)`
@@ -102,4 +104,12 @@ export const CryptoTitleGray = styled(CryptoTitle)`
 export const CryptoParagraph = styled(Paragraph)`
   font-size: 16px;
   cursor: default;
+
+  &.red {
+    color: red;
+  }
+
+  &.green {
+    color: green;
+  }
 `;

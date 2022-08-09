@@ -6,11 +6,13 @@ import {
   CryptoDetails,
   CryptoName,
 } from "./styles";
-import circle from "../../images/circle.png";
-import logo from "../../images/logo-crypto.png";
+import circle from "../../images/circle.svg";
 import { CryptoParagraph, CryptoTitle, CryptoTitleGray } from "../Typography";
 
+import millify from "millify";
+
 const CryptoCard = ({
+  rank,
   title,
   symbol,
   dailyChange,
@@ -22,18 +24,20 @@ const CryptoCard = ({
   return (
     <CardContainer>
       <CryptoName>
-        <CryptoTitle>1.</CryptoTitle>
-        <CryptoTitle>Bitcoin</CryptoTitle>
-        <CryptoTitleGray>BTC</CryptoTitleGray>
-        <CryptoParagraph>-0.15%</CryptoParagraph>
+        <CryptoTitle>{rank}.</CryptoTitle>
+        <CryptoTitle>{title}</CryptoTitle>
+        <CryptoTitleGray>{symbol}</CryptoTitleGray>
+        <CryptoParagraph className={dailyChange < 0 ? "red" : "green"}>
+          {dailyChange}
+        </CryptoParagraph>
       </CryptoName>
       <CryptoDetails>
-        <CryptoParagraph>Price: $100k</CryptoParagraph>
-        <CryptoParagraph>Market Cap: $100k</CryptoParagraph>
-        <CryptoParagraph>Volume(24H): $100k</CryptoParagraph>
+        <CryptoParagraph>Price: ${millify(price)}</CryptoParagraph>
+        <CryptoParagraph>Market Cap: ${millify(marketCap)}</CryptoParagraph>
+        <CryptoParagraph>Volume(24H): ${millify(volume)}</CryptoParagraph>
       </CryptoDetails>
-      <CoinImg src={logo} alt="" />
-      <Circle src={circle} alt="" />
+      <CoinImg src={img} alt={title} />
+      <Circle src={circle} alt="circle" />
     </CardContainer>
   );
 };
