@@ -2,41 +2,73 @@ import { ExtraSmallTitle } from "../Typography";
 import { Container, Wrapper } from "./styles";
 import { ThreeDots } from "react-loader-spinner";
 
-import { useGetCryptosQuery } from "../../services/cryptoApi";
-import millify from "millify";
+import { useGetGlobalStatsQuery } from "../../services/cryptoApi";
 
 const GlobalStats = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetGlobalStatsQuery();
 
-  const globalStats = data?.data?.stats;
-
-  if (isFetching)
-    return (
-      <Container>
-        <Wrapper>
-          <ThreeDots color="#f3bc19" height={30} width={40} />
-        </Wrapper>
-      </Container>
-    );
+  const globalStats = data?.data;
 
   return (
     <Container>
       <Wrapper>
-        <ExtraSmallTitle>
-          Total Cryptos: <span>{millify(globalStats.total)}</span>
-        </ExtraSmallTitle>
-        <ExtraSmallTitle>
-          Total Market Cap: <span>${millify(globalStats.totalMarketCap)}</span>
-        </ExtraSmallTitle>
-        <ExtraSmallTitle>
-          Total Exchanges: <span>{millify(globalStats.totalExchanges)}</span>
-        </ExtraSmallTitle>
-        <ExtraSmallTitle>
-          Total Markets: <span>{millify(globalStats.totalMarkets)}</span>
-        </ExtraSmallTitle>
-        <ExtraSmallTitle>
-          24H Volume: <span>${millify(globalStats.total24hVolume)}</span>
-        </ExtraSmallTitle>
+        {isFetching ? (
+          <ThreeDots color="#f3bc19" height={30} width={40} />
+        ) : (
+          <>
+            <ExtraSmallTitle>
+              Total Cryptos:{" "}
+              <span>
+                {globalStats.totalCoins.toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </ExtraSmallTitle>
+            <ExtraSmallTitle>
+              Total Market Cap:{" "}
+              <span>
+                $
+                {Number(globalStats.totalMarketCap).toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </ExtraSmallTitle>
+            <ExtraSmallTitle>
+              Total Exchanges:{" "}
+              <span>
+                {globalStats.totalExchanges.toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </ExtraSmallTitle>
+            <ExtraSmallTitle>
+              Total Markets:{" "}
+              <span>
+                {globalStats.totalMarkets.toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </ExtraSmallTitle>
+            <ExtraSmallTitle>
+              24H Volume:{" "}
+              <span>
+                $
+                {Number(globalStats.total24hVolume).toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </ExtraSmallTitle>
+            <ExtraSmallTitle>
+              BTC Dominance:{" "}
+              <span>
+                {globalStats.btcDominance.toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}
+                %
+              </span>
+            </ExtraSmallTitle>
+          </>
+        )}
       </Wrapper>
     </Container>
   );

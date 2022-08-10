@@ -27,12 +27,22 @@ const CryptoCard = ({
         <CryptoTitle>{rank}.</CryptoTitle>
         <CryptoTitle>{title}</CryptoTitle>
         <CryptoTitleGray>{symbol}</CryptoTitleGray>
-        <CryptoParagraph className={dailyChange < 0 ? "red" : "green"}>
-          {dailyChange}
+        <CryptoParagraph
+          className={`${dailyChange < 0 ? "red" : "green"} bold`}
+        >
+          {dailyChange}%
         </CryptoParagraph>
       </CryptoName>
       <CryptoDetails>
-        <CryptoParagraph>Price: ${millify(price)}</CryptoParagraph>
+        <CryptoParagraph className="bold2">
+          Price:{" "}
+          <span>
+            $
+            {Number(price).toLocaleString(navigator.language, {
+              maximumFractionDigits: 2,
+            })}
+          </span>
+        </CryptoParagraph>
         <CryptoParagraph>Market Cap: ${millify(marketCap)}</CryptoParagraph>
         <CryptoParagraph>Volume(24H): ${millify(volume)}</CryptoParagraph>
       </CryptoDetails>

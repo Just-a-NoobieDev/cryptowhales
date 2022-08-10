@@ -38,8 +38,6 @@ export const CardContainer = styled.div`
   position: relative;
   padding: 20px;
   transition: 0.3s ease;
-
-  @media (min-width: 980px) {
     &:hover {
       transform: scale(1.03);
     }

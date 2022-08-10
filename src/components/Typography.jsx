@@ -21,6 +21,9 @@ export const ExtraSmallTitle = styled.h3`
   @media (min-width: 980px) {
     &:hover {
       transform: scale(1.2);
+      & > span {
+        font-weight: 600;
+      }
     }
   }
 `;
@@ -33,6 +36,14 @@ export const SectionTitle = styled.h1`
 
   @media (min-width: 768px) {
     font-size: 30px;
+  }
+`;
+
+export const SectionTitle2 = styled(SectionTitle)`
+  font-size: 18px;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
   }
 `;
 
@@ -111,5 +122,31 @@ export const CryptoParagraph = styled(Paragraph)`
 
   &.green {
     color: green;
+  }
+
+  &.bold {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &.bold2 {
+    & > span {
+      font-weight: 600;
+    }
+  }
+
+  &.big {
+    font-size: 20px;
+    font-weight: 600;
+  }
+`;
+
+export const CoinTitle = styled(CryptoTitle)`
+  font-size: 18px;
+  flex-wrap: no-wrap;
+  max-width: 100%;
+
+  &.gray {
+    color: #bababa;
   }
 `;
