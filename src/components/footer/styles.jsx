@@ -40,7 +40,7 @@ export const SubContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
-  margin-top: 0.1rem;
+  margin: 0.1rem -;
   flex-wrap: wrap;
   & > img {
     width: 100%;
