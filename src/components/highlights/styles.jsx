@@ -30,7 +30,7 @@ export const Card = styled.div`
   transition: 0.3s ease;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  border-bottom: 3px solid #6da9f1;
+  border-bottom: 3px solid #5b7fff;
 
   @media (min-width: 768px) {
     width: 50%;

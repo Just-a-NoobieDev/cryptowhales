@@ -49,9 +49,9 @@ export const SmallCardDiv = styled.div`
 
 export const NewsCardContainer = styled.a(
   ({ size }) => `
-  background-color: ${size === "big-card" ? "#F3BC19" : "#437ABD"};
+  background-color: transparent;
   width: 100%;
-  height: ${size === "big-card" ? "300px" : "250px"};
+  height: 250px;
   position: relative;
   border-radius: 5px;
 
@@ -59,13 +59,15 @@ export const NewsCardContainer = styled.a(
   & > img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
   }
 
   
 
   @media (min-width: 768px) {
     width: ${size === "big-card" ? "100%" : "350px"};
-    height: ${size === "big-card" ? "400px" : "240px"};
+    height: ${size === "big-card" ? "400px" : "280px"};
   }
 
   @media (min-width: 980px) {
@@ -82,9 +84,9 @@ export const NewsCardContainer = styled.a(
 
 export const NewsInfo = styled.div(
   ({ size }) => `
-  background-color: #fff;
+  background-color: rgba(255,255,255,.8);
   width: 95%;
-  height: ${size === "big-card" ? "182px" : "130px"};
+  height: ${size === "big-card" ? "150px" : "145px"};
   position: absolute;
   bottom: 0;
   left: 0;
@@ -93,7 +95,7 @@ export const NewsInfo = styled.div(
 
   @media (min-width: 768px) {
     width: ${size === "big-card" ? "80%" : "95%"};
-    height: ${size === "big-card" ? "175px" : "130px"};
+    height: ${size === "big-card" ? "175px" : "150px"};
   }
 
   @media (min-width: 980px) {
@@ -126,13 +128,13 @@ export const ProviderDiv = styled.div(
 
   @media (min-width: 768px) {
     & > img {
-      width: 25px;
+      width: 20px;
     }
   }
 
   @media (min-width: 980px) {
     & > img {
-      width: ${size === "big-card" ? "30px" : "20px"};
+      width: ${size === "big-card" ? "30px" : "15px"};
     }
   }
 `

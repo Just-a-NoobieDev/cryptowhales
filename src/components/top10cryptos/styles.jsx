@@ -49,6 +49,13 @@ export const Circle = styled.img`
   bottom: 0;
   right: 0;
   border-radius: 8px;
+  & > svg {
+    circle {
+      .fill {
+        color: linear-gradient(to bottom right, #5b7fff, #33ccfc);
+      }
+    }
+  }
 `;
 
 export const CoinImg = styled.img`

@@ -58,7 +58,7 @@ export const NewsTitle = styled.h2(
   }
 
   @media (min-width: 980px) {
-    font-size: ${size === "big-card" ? "28px" : "12.5px"}; 
+    font-size: ${size === "big-card" ? "28px" : "11px"}; 
   }
 `
 );

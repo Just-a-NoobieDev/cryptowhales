@@ -7,7 +7,7 @@ import { useGetTop10CryptosQuery } from "../../services/cryptoApi";
 import { useEffect, useState } from "react";
 
 const CryptoSection = () => {
-  const { data: coinsList, isFetching } = useGetTop10CryptosQuery();
+  const { data: coinsList } = useGetTop10CryptosQuery();
   const [coins, setCoins] = useState(coinsList?.data?.coins);
 
   useEffect(() => {
@@ -18,31 +18,26 @@ const CryptoSection = () => {
     <Container>
       <Wrapper>
         <SectionTitle>Top 10 CryptoCurrency</SectionTitle>
-        {isFetching ? (
-          <Container>
-            <ThreeDots color="#f3bc19" height={30} width={40} />
-          </Container>
-        ) : (
-          <CryptoWrapper>
-            {coins?.map((coin) => {
-              const volume = coin["24hVolume"];
 
-              return (
-                <CryptoCard
-                  key={coin.rank}
-                  rank={coin.rank}
-                  title={coin.name}
-                  symbol={coin.symbol}
-                  dailyChange={coin.change}
-                  price={coin.price}
-                  marketCap={coin.marketCap}
-                  volume={volume}
-                  img={coin.iconUrl}
-                />
-              );
-            })}
-          </CryptoWrapper>
-        )}
+        <CryptoWrapper>
+          {coins?.map((coin) => {
+            const volume = coin["24hVolume"];
+
+            return (
+              <CryptoCard
+                key={coin.rank}
+                rank={coin.rank}
+                title={coin.name}
+                symbol={coin.symbol}
+                dailyChange={coin.change}
+                price={coin.price}
+                marketCap={coin.marketCap}
+                volume={volume}
+                img={coin.iconUrl}
+              />
+            );
+          })}
+        </CryptoWrapper>
       </Wrapper>
     </Container>
   );

@@ -1,19 +1,63 @@
-import NewsCard from "./NewsCard";
-
-import { SectionTitle } from "../Typography";
 import { Container, NewsCardDiv, SmallCardDiv, Wrapper } from "./styles";
 
+import NewsCard from "./NewsCard";
+import { SectionTitle } from "../Typography";
+import { useGet4LatestCryptoNewsQuery } from "../../services/cryptoNewsApi";
+
+const demoImage =
+  "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
+
 const NewsSection = () => {
+  const { data: cryptoNews } = useGet4LatestCryptoNewsQuery();
+
+  console.log(cryptoNews);
+
   return (
     <Container>
       <Wrapper>
         <SectionTitle>LATEST NEWS</SectionTitle>
         <NewsCardDiv>
-          <NewsCard size="big-card" />
+          {cryptoNews?.value?.map((news, index) => {
+            if (index === 0) {
+              return (
+                <NewsCard
+                  key={index}
+                  size="big-card"
+                  newsLink={news.url}
+                  imgUrl={news?.image?.thumbnail?.contentUrl || demoImage}
+                  title={news.name}
+                  desc={news.description}
+                  providerName={news.provider[0]?.name}
+                  providerImg={
+                    news.provider[0]?.image?.thumbnail?.contentUrl || demoImage
+                  }
+                  datePublished={news.datePublished}
+                />
+              );
+            }
+            return null;
+          })}
           <SmallCardDiv>
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
+            {cryptoNews?.value?.map((news, index) => {
+              if (index > 0) {
+                return (
+                  <NewsCard
+                    key={index}
+                    newsLink={news.url}
+                    imgUrl={news?.image?.thumbnail?.contentUrl || demoImage}
+                    title={news.name}
+                    desc={news.description}
+                    providerName={news.provider[0]?.name}
+                    providerImg={
+                      news.provider[0]?.image?.thumbnail?.contentUrl ||
+                      demoImage
+                    }
+                    datePublished={news.datePublished}
+                  />
+                );
+              }
+              return null;
+            })}
           </SmallCardDiv>
         </NewsCardDiv>
       </Wrapper>

@@ -4,6 +4,10 @@ import NewsSection from "../components/news/NewsSection";
 import CryptoSection from "../components/top10cryptos/CryptoSection";
 import Highlights from "../components/highlights/Highlights";
 
+import { useGetGlobalStatsQuery } from "../services/cryptoApi";
+import { useGet4LatestCryptoNewsQuery } from "../services/cryptoNewsApi";
+import Loader from "../components/Loader";
+
 const Main = styled.main`
   margin-top: 68px;
   height: calc(100vh - 68px);
@@ -15,12 +19,21 @@ const Main = styled.main`
 `;
 
 const Home = () => {
+  const { isFetching } = useGetGlobalStatsQuery();
+  const { isFetching: fetch } = useGet4LatestCryptoNewsQuery();
+
   return (
     <Main>
-      <GlobalStats />
-      <NewsSection />
-      <Highlights />
-      <CryptoSection />
+      {isFetching || fetch ? (
+        <Loader />
+      ) : (
+        <>
+          <GlobalStats />
+          <NewsSection />
+          <Highlights />
+          <CryptoSection />
+        </>
+      )}
     </Main>
   );
 };
