@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import GlobalStats from "../components/global-stats/GlobalStats";
-import NewsSection from "../components/news/NewsSection";
 import CryptoSection from "../components/top10cryptos/CryptoSection";
+import Footer from "../components/footer/Footer";
+import GlobalStats from "../components/global-stats/GlobalStats";
 import Highlights from "../components/highlights/Highlights";
-
-import { useGetGlobalStatsQuery } from "../services/cryptoApi";
-import { useGet4LatestCryptoNewsQuery } from "../services/cryptoNewsApi";
 import Loader from "../components/Loader";
+import NewsSection from "../components/news/NewsSection";
+import styled from "styled-components";
+import { useGet4LatestCryptoNewsQuery } from "../services/cryptoNewsApi";
+import { useGetGlobalStatsQuery } from "../services/cryptoApi";
 
 const Main = styled.main`
   margin-top: 68px;
@@ -32,6 +32,7 @@ const Home = () => {
           <NewsSection />
           <Highlights />
           <CryptoSection />
+          <Footer />
         </>
       )}
     </Main>

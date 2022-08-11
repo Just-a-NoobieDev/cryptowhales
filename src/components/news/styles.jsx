@@ -49,9 +49,9 @@ export const SmallCardDiv = styled.div`
 
 export const NewsCardContainer = styled.a(
   ({ size }) => `
-  background-color: transparent;
+  background-color: linear-gradient(to bottom right, #6889ff, #c668ff);
   width: 100%;
-  height: 250px;
+  height:  ${size === "big-card" ? "350px" : "250px"};
   position: relative;
   border-radius: 5px;
 
@@ -86,7 +86,7 @@ export const NewsInfo = styled.div(
   ({ size }) => `
   background-color: rgba(255,255,255,.8);
   width: 95%;
-  height: ${size === "big-card" ? "150px" : "145px"};
+  height: ${size === "big-card" ? "185px" : "145px"};
   position: absolute;
   bottom: 0;
   left: 0;
@@ -101,7 +101,7 @@ export const NewsInfo = styled.div(
   @media (min-width: 980px) {
     padding: 5px 10px;
     width: ${size === "big-card" ? "85%" : "95%"};
-    height: ${size === "big-card" ? "170px" : "100px"};
+    height: ${size === "big-card" ? "180px" : "100px"};
   }
 `
 );

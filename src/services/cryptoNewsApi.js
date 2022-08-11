@@ -23,7 +23,7 @@ export const cryptoNewsApi = createApi({
     get4LatestCryptoNews: builder.query({
       query: () =>
         createRequest(
-          `/news/search?q=Cryptocurrency&safeSearch=Off&textFormat=Raw&freshness=Day&count=5`
+          `/news/search?q=Cryptocurrency&safeSearch=Off&textFormat=Raw&freshness=Day&count=4`
         ),
     }),
   }),

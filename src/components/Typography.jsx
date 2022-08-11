@@ -150,3 +150,43 @@ export const CoinTitle = styled(CryptoTitle)`
     color: #bababa;
   }
 `;
+
+export const FooterTitle = styled.h2`
+  font-size: 1rem;
+  color: #161616;
+  cursor: default;
+`;
+
+export const FooterSTitle = styled(FooterTitle)`
+  color: #bababa;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    text-align: left;
+
+    &:hover {
+      color: #5b7fff;
+    }
+  }
+`;
+
+export const FooterSTitle2 = styled(FooterTitle)`
+  font-size: 0.8rem;
+  color: #bababa;
+  font-weight: 500;
+
+  & > a {
+    color: #5b7fff;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    text-align: left;
+
+    & > a:hover {
+      opacity: 0.8;
+    }
+  }
+`;

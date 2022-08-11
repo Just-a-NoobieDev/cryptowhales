@@ -11,7 +11,7 @@ export const NavContainer = styled.nav`
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-  border-bottom: 1px solid #bababa;
+  border-bottom: 1px solid #e5e5e5;
   z-index: 10000;
 
   @media (min-width: 768px) {
