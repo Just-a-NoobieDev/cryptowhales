@@ -21,9 +21,9 @@ Check it out [live](/)
 - FlexBox
 - Mobile-first workflow
 - Rapid API
-- - CoinRanking API
-- - Bing Search News API
-- - CoinGecko API
+  - CoinRanking API
+  - Bing Search News API
+  - CoinGecko API
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 
