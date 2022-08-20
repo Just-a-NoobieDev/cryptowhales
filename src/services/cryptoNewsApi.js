@@ -2,32 +2,25 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoNewsHeaders = {
   "X-BingApis-SDK": "true",
-  "X-RapidAPI-Key": "875a9f89c9mshf13d33e1d2736fep1c5bcdjsn0c981426b180",
-  "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
+  "X-RapidAPI-Key": process.env.REACT_APP_BING_NEWS_SEARCH_API,
+  "X-RapidAPI-Host": process.env.REACT_APP_BING_NEWS_SEARCH_HOST,
 };
-
-const baseUrl = "https://bing-news-search1.p.rapidapi.com";
 
 const createRequest = (url) => ({ url, headers: cryptoNewsHeaders });
 
 export const cryptoNewsApi = createApi({
   reducerPath: "cryptoNewsApi",
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.REACT_APP_BING_NEWS_SEARCH_BASE_URL,
+  }),
   endpoints: (builder) => ({
     getCryptoNews: builder.query({
-      query: () =>
+      query: (count) =>
         createRequest(
-          `/news/search?q=Cryptocurrency&safeSearch=Off&textFormat=Raw&freshness=Day`
-        ),
-    }),
-    get4LatestCryptoNews: builder.query({
-      query: () =>
-        createRequest(
-          `/news/search?q=Cryptocurrency&safeSearch=Off&textFormat=Raw&freshness=Day&count=4`
+          `/news/search?q=Cryptocurrency&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`
         ),
     }),
   }),
 });
 
-export const { useGetCryptoNewsQuery, useGet4LatestCryptoNewsQuery } =
-  cryptoNewsApi;
+export const { useGetCryptoNewsQuery } = cryptoNewsApi;

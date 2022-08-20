@@ -58,7 +58,7 @@ export const NewsTitle = styled.h2(
   }
 
   @media (min-width: 980px) {
-    font-size: ${size === "big-card" ? "28px" : "11px"}; 
+    font-size: ${size === "big-card" ? "24px" : "11px"}; 
   }
 `
 );
@@ -100,21 +100,21 @@ export const TimeParagraph = styled(Paragraph)(
 );
 
 export const CryptoTitle = styled.h2`
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
-  cursor: default;
+  cursor: pointer;
   line-height: 100%;
-  max-width: 120px;
 `;
 
 export const CryptoTitleGray = styled(CryptoTitle)`
   color: #bababa;
-  cursor: default;
+  cursor: pointer;
+  margin: 0 5px 0 10px;
 `;
 
 export const CryptoParagraph = styled(Paragraph)`
-  font-size: 16px;
-  cursor: default;
+  font-size: 14px;
+  cursor: pointer;
 
   &.red {
     color: red;
@@ -140,6 +140,8 @@ export const CryptoParagraph = styled(Paragraph)`
     font-weight: 600;
   }
 `;
+
+export const CryptoParagraph2 = styled(CryptoParagraph)``;
 
 export const CoinTitle = styled(CryptoTitle)`
   font-size: 18px;

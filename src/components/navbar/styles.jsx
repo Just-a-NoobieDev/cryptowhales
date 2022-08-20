@@ -41,6 +41,7 @@ export const Wrapper = styled.div`
 
 export const Logo = styled.img`
   height: 40px;
+  width: auto;
 `;
 
 export const MenuContainer = styled.div`

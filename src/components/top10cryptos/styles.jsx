@@ -9,6 +9,14 @@ export const Container = styled.section`
   margin-top: 2rem;
 `;
 
+export const CoinContainer = styled.div`
+  min-height: calc(100vh - 128px);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
 export const Wrapper = styled.div`
   max-width: 1200px;
   width: 100%;
@@ -23,14 +31,14 @@ export const CryptoWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 15px;
   margin-top: 1.5rem;
   justify-content: center;
 `;
 
 export const CardContainer = styled.div`
-  width: 350px;
-  height: 200px;
+  width: 365px;
+  height: 180px;
   background-color: #fff;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08),
     0px 1px 2px rgba(88, 102, 106, 0.12);
@@ -38,6 +46,7 @@ export const CardContainer = styled.div`
   position: relative;
   padding: 20px;
   transition: 0.3s ease;
+  cursor: pointer;
     &:hover {
       transform: scale(1.03);
     }
@@ -49,6 +58,8 @@ export const Circle = styled.img`
   bottom: 0;
   right: 0;
   border-radius: 8px;
+  opacity: 0.8;
+  width: 110px;
   & > svg {
     circle {
       .fill {
@@ -61,22 +72,59 @@ export const Circle = styled.img`
 export const CoinImg = styled.img`
   position: absolute;
   bottom: 9%;
-  right: 6%;
+  right: 4%;
   border-radius: 8px;
   z-index: 1;
 
-  width: 20%;
+  width: 18%;
 `;
 
 export const CryptoName = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 5px;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const CryptoDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+`;
+
+export const SearchDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  margin-top: 64px;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    input {
+      width: 35%;
+      height: 40px;
+    }
+  }
 `;

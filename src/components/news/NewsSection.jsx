@@ -2,13 +2,13 @@ import { Container, NewsCardDiv, SmallCardDiv, Wrapper } from "./styles";
 
 import NewsCard from "./NewsCard";
 import { SectionTitle } from "../Typography";
-import { useGet4LatestCryptoNewsQuery } from "../../services/cryptoNewsApi";
+import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 
 const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 const NewsSection = () => {
-  const { data: cryptoNews } = useGet4LatestCryptoNewsQuery();
+  const { data: cryptoNews } = useGetCryptoNewsQuery(4);
 
   console.log(cryptoNews);
 

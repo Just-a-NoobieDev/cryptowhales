@@ -1,11 +1,12 @@
 import { ExtraSmallTitle } from "../Typography";
 import { Container, Wrapper } from "./styles";
-import { ThreeDots } from "react-loader-spinner";
 
 import { useGetGlobalStatsQuery } from "../../services/cryptoApi";
 
 const GlobalStats = () => {
   const { data } = useGetGlobalStatsQuery();
+
+  console.log(data);
 
   const globalStats = data?.data;
 

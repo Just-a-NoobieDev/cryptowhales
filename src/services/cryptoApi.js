@@ -1,36 +1,29 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
-  "X-RapidAPI-Key": "875a9f89c9mshf13d33e1d2736fep1c5bcdjsn0c981426b180",
-  "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+  "X-RapidAPI-Key": process.env.REACT_APP_COINRANKING_API,
+  "X-RapidAPI-Host": process.env.REACT_APP_COINRANKING_HOST,
 };
-
-const baseUrl = "https://coinranking1.p.rapidapi.com";
 
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
 
 export const cryptoApi = createApi({
   reducerPath: "cryptoApi",
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.REACT_APP_COINRANKING_BASE_URL,
+  }),
   endpoints: (builder) => ({
-    getTop10Cryptos: builder.query({
-      query: (count) => createRequest(`/coins?limit=10`),
-    }),
     getCryptos: builder.query({
-      query: () => createRequest("/coins"),
+      query: (count) => createRequest(`/coins?limit=${count}`),
     }),
     getGlobalStats: builder.query({
       query: () => createRequest("/stats"),
     }),
     getCoin: builder.query({
-      query: (id) => createRequest(`/coin/${id}}`),
+      query: (id) => createRequest(`/coin/${id}`),
     }),
   }),
 });
 
-export const {
-  useGetCryptosQuery,
-  useGetTop10CryptosQuery,
-  useGetGlobalStatsQuery,
-  useGetCoinQuery,
-} = cryptoApi;
+export const { useGetCryptosQuery, useGetGlobalStatsQuery, useGetCoinQuery } =
+  cryptoApi;

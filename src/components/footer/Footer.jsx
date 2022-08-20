@@ -45,9 +45,13 @@ const Footer = () => {
           </Column>
           <Column>
             <FooterTitle>Socials</FooterTitle>
-            <Link to="https://github.com/Just-a-NoobieDev/cryptowhales">
+            <a
+              href="https://github.com/Just-a-NoobieDev/cryptowhales"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FooterSTitle>Github</FooterSTitle>
-            </Link>
+            </a>
             <Link to="/">
               <FooterSTitle>Facebook</FooterSTitle>
             </Link>
