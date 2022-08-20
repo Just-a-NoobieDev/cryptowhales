@@ -21,7 +21,7 @@ const Navbar = () => {
     <NavContainer>
       <Wrapper>
         <Link to="/" onClick={size >= 980 ? null : () => setActive(false)}>
-          <Logo src={LogoImg} />
+          <Logo src={LogoImg} alt="logo" />
         </Link>
         {active ? (
           <IoMdClose size="2em" onClick={toggleNav} />
@@ -35,10 +35,10 @@ const Navbar = () => {
           <Link to="/cryptocurrency" onClick={size >= 980 ? null : toggleNav}>
             CryptoCurrency
           </Link>
-          <Link to="/" onClick={size >= 980 ? null : toggleNav}>
+          <Link to="/news" onClick={size >= 980 ? null : toggleNav}>
             News
           </Link>
-          <Link to="/" onClick={size >= 980 ? null : toggleNav}>
+          <Link to="/exchanges" onClick={size >= 980 ? null : toggleNav}>
             Exchanges
           </Link>
         </MenuContainer>

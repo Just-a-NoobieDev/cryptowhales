@@ -5,7 +5,7 @@ import Highlights from "../components/highlights/Highlights";
 import Loader from "../components/Loader";
 import NewsSection from "../components/news/NewsSection";
 import styled from "styled-components";
-import { useGet4LatestCryptoNewsQuery } from "../services/cryptoNewsApi";
+import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import { useGetGlobalStatsQuery } from "../services/cryptoApi";
 
 const Main = styled.main`
@@ -20,7 +20,7 @@ const Main = styled.main`
 
 const Home = () => {
   const { isFetching } = useGetGlobalStatsQuery();
-  const { isFetching: fetch } = useGet4LatestCryptoNewsQuery();
+  const { isFetching: fetch } = useGetCryptoNewsQuery();
 
   return (
     <Main>

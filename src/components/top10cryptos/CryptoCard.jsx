@@ -7,7 +7,7 @@ import {
   CryptoName,
 } from "./styles";
 import circle from "../../images/circle.svg";
-import { CryptoParagraph, CryptoTitle, CryptoTitleGray } from "../Typography";
+import { CryptoParagraph, CryptoParagraph2, CryptoTitle, CryptoTitleGray } from "../Typography";
 
 import millify from "millify";
 
@@ -27,11 +27,11 @@ const CryptoCard = ({
         <CryptoTitle>{rank}.</CryptoTitle>
         <CryptoTitle>{title}</CryptoTitle>
         <CryptoTitleGray>{symbol}</CryptoTitleGray>
-        <CryptoParagraph
+        <CryptoParagraph2
           className={`${dailyChange < 0 ? "red" : "green"} bold`}
         >
           {dailyChange}%
-        </CryptoParagraph>
+        </CryptoParagraph2>
       </CryptoName>
       <CryptoDetails>
         <CryptoParagraph className="bold2">

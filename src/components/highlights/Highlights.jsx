@@ -31,7 +31,7 @@ const Highlights = () => {
             </CardTitleDiv>
             {bestCoins?.map((coin, index) => {
               return (
-                <Link to="/">
+                <Link to={`/crypto/${coin.uuid}`}>
                   <CoinDiv>
                     <CoinTitle style={{ cursor: "pointer" }}>
                       {index + 1}.
