@@ -12,7 +12,7 @@ const Crypto = () => {
     <Container>
       <h1>This is Crypto Details</h1>
       <Footer />
-    </Con>
+    </Container>
   );
 };
 
