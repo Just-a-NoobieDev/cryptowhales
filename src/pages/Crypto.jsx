@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Footer from "../components/footer/Footer";
+import { Container } from "../components/top10cryptos/styles";
 import { useGetCoinQuery } from "../services/cryptoApi";
 
 const Crypto = () => {
@@ -8,9 +9,10 @@ const Crypto = () => {
 
   console.log(data);
   return (
-    <div>
+    <Container>
+      <h1>This is Crypto Details</h1>
       <Footer />
-    </div>
+    </Con>
   );
 };
 
