@@ -10,8 +10,6 @@ const demoImage =
 const NewsSection = () => {
   const { data: cryptoNews } = useGetCryptoNewsQuery(4);
 
-  console.log(cryptoNews);
-
   return (
     <Container>
       <Wrapper>
