@@ -20,9 +20,55 @@ const News = () => {
   });
 
   return (
-    <div>
-      <Footer />
-    </div>
+    <>
+      {isFetching ? (
+        <Loader />
+      ) : (
+        <>
+          <SearchDiv>
+            <h1>Crypto News</h1>
+            <select
+              name="CryptoNews"
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="Cryptocurency">Cryptocurrency</option>
+              {data?.data?.coins?.map((coin) => (
+                <option key={coin.uuid} value={coin.name}>
+                  {coin.name}
+                </option>
+              ))}
+            </select>
+          </SearchDiv>
+          <NewsContainer>
+            {cryptoNews?.value?.length > 0 ? (
+              cryptoNews?.value?.map((news, index) => {
+                return (
+                  <NewsCard
+                    key={index}
+                    size="page"
+                    newsLink={news.url}
+                    imgUrl={news?.image?.thumbnail?.contentUrl || demoImage}
+                    title={news.name}
+                    desc={news.description}
+                    providerName={news.provider[0]?.name}
+                    providerImg={
+                      news.provider[0]?.image?.thumbnail?.contentUrl ||
+                      demoImage
+                    }
+                    datePublished={news.datePublished}
+                  />
+                );
+              })
+            ) : (
+              <NoFound2>
+                <h1>0 results for {category}</h1>
+              </NoFound2>
+            )}
+          </NewsContainer>
+          <Footer />
+        </>
+      )}
+    </>
   );
 };
 
