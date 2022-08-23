@@ -27,8 +27,6 @@ const Exchanges = () => {
     data();
   }, []);
 
-  console.log(data);
-
   useEffect(() => {
     setExchanges(data);
 
@@ -90,6 +88,7 @@ const Exchanges = () => {
                       </td>
                       <td>{exchange.country}</td>
                       <td className="trade">
+                        $
                         {exchange.trade_volume_24h_btc.toLocaleString(
                           undefined,
                           {
