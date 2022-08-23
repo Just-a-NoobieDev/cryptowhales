@@ -49,16 +49,20 @@ export const SectionTitle2 = styled(SectionTitle)`
 
 export const NewsTitle = styled.h2(
   ({ size }) => `
-  font-size: 16px;
+  font-size: ${size === "page" ? "18px" : "16px"};
   line-height: 120%;
   margin-bottom: 5px;
 
   @media (min-width: 768px) {
-    font-size: ${size === "big-card" ? "24px" : "16px"} 
+    font-size: ${
+      size === "big-card" ? "24px" : size === "page" ? "18px" : "16px"
+    } 
   }
 
   @media (min-width: 980px) {
-    font-size: ${size === "big-card" ? "24px" : "11px"}; 
+    font-size: ${
+      size === "big-card" ? "24px" : size === "page" ? "18px" : "11px"
+    }; 
   }
 `
 );
@@ -83,7 +87,10 @@ export const Paragraph = styled.p(
   }
 
   @media (min-width: 980px) {
-    font-size: ${size === "big-card" ? "13px" : "10px"}; 
+    margin-bottom: 10px;
+    font-size: ${
+      size === "big-card" ? "13px" : size === "page" ? "13px" : "10px"
+    }; 
   }
 `
 );
@@ -192,3 +199,5 @@ export const FooterSTitle2 = styled(FooterTitle)`
     }
   }
 `;
+
+
