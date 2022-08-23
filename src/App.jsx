@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound";
 import CryptoCurrency from "./pages/CryptoCurrency";
 import News from "./pages/News";
 import Crypto from "./pages/Crypto";
+import Exchanges from "./pages/Exchanges";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route exact path="/cryptocurrency" element={<CryptoCurrency />} />
         <Route exact path="/crypto/:id" element={<Crypto />} />
         <Route exact path="/news" element={<News />} />
+        <Route exact path="/exchanges" element={<Exchanges />} />
         <Route exact path="*" element={<NotFound />} />
       </Routes>
     </>
