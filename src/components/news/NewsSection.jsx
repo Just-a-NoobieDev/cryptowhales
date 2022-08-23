@@ -8,7 +8,10 @@ const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 const NewsSection = () => {
-  const { data: cryptoNews } = useGetCryptoNewsQuery(4);
+  const { data: cryptoNews } = useGetCryptoNewsQuery({
+    category: "Cryptocurrency",
+    count: 4,
+  });
 
   return (
     <Container>

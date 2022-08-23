@@ -2,7 +2,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Loader from "../components/Loader";
 import CryptoCard from "../components/top10cryptos/CryptoCard";
-import { CoinContainer, SearchDiv } from "../components/top10cryptos/styles";
+import {
+  CoinContainer,
+  NoFound,
+  SearchDiv,
+} from "../components/top10cryptos/styles";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer/Footer";
@@ -37,23 +41,37 @@ const CryptoCurrency = () => {
             />
           </SearchDiv>
           <CoinContainer>
-            {cryptos?.map((crypto) => {
-              const volume = crypto["24hVolume"];
-              return (
-                <Link key={crypto.uuid} to={`/crypto/${crypto.uuid}`}>
-                  <CryptoCard
-                    rank={crypto.rank}
-                    title={crypto.name}
-                    symbol={crypto.symbol}
-                    dailyChange={crypto.change}
-                    price={crypto.price}
-                    marketCap={crypto.marketCap}
-                    volume={volume}
-                    img={crypto.iconUrl}
-                  />
-                </Link>
-              );
-            })}
+            {cryptos?.length > 0 ? (
+              cryptos?.map((crypto) => {
+                const volume = crypto["24hVolume"];
+
+                return (
+                  <Link key={crypto.uuid} to={`/crypto/${crypto.uuid}`}>
+                    <CryptoCard
+                      rank={crypto.rank}
+                      title={crypto.name}
+                      symbol={crypto.symbol}
+                      dailyChange={crypto.change}
+                      price={crypto.price}
+                      marketCap={crypto.marketCap}
+                      volume={volume}
+                      img={crypto.iconUrl}
+                    />
+                  </Link>
+                );
+              })
+            ) : (
+              <NoFound>
+                <h1>0 results for {searchTerm}</h1>
+                <div className="tips">
+                  <h2>Search Tips</h2>
+                  <ul>
+                    <li>Make sure words are spelled correctly</li>
+                    <li>Try using different keywords</li>
+                  </ul>
+                </div>
+              </NoFound>
+            )}
           </CoinContainer>
           <Footer />
         </>

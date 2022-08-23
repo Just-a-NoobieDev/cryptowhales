@@ -109,10 +109,11 @@ export const SearchDiv = styled.div`
   input {
     width: 100%;
     outline: none;
-    height: 30px;
+    height: 40px;
     border-radius: 5px;
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 16px;
+    border: thin solid #161616;
   }
 
   @media (min-width: 768px) {
@@ -124,7 +125,34 @@ export const SearchDiv = styled.div`
 
     input {
       width: 35%;
-      height: 40px;
     }
   }
+`;
+
+export const NoFound = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08),
+    0px 1px 2px rgba(88, 102, 106, 0.12);
+  padding: 20px;
+  border-radius: 10px;
+  height: 200px;
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .tips {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+export const NoFound2 = styled(NoFound)`
+  height: 100px;
 `;
